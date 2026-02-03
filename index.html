@@ -5,13 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eli, will you be my Valentine? 💕</title>
     <!-- 
-    IMPORTANT: To display the celebration image on GitHub Pages, you must also upload:
-    - The image file at: assets/generated/valentine-good-choice-meme.dim_1200x1200.png
-    - Source location in workspace: frontend/public/assets/generated/valentine-good-choice-meme.dim_1200x1200.png
+    GITHUB PAGES SETUP INSTRUCTIONS:
     
-    Your GitHub repo structure should be:
-    /valentine.html (this file)
-    /assets/generated/valentine-good-choice-meme.dim_1200x1200.png (the meme image)
+    This file serves as the entry point for your GitHub Pages site.
+    When you visit https://mattiaiacono19-ship-it.github.io/eli-valentine/
+    GitHub Pages automatically serves this index.html file.
+    
+    IMPORTANT: To display the celebration image, your GitHub repo must contain:
+    - This file at: /index.html (or /valentine.html - both work)
+    - The image at: /assets/generated/dog-valentine-meme.dim_1200x1200.png
+    
+    Required GitHub repo file structure:
+    /index.html (this file - serves at root URL)
+    /assets/
+      /generated/
+        /dog-valentine-meme.dim_1200x1200.png (the dog-themed celebration meme)
+    
+    The image path below (assets/generated/...) is relative to the repo root.
     -->
     <style>
         * {
@@ -72,7 +82,7 @@
         .success-container {
             max-width: 42rem;
             width: 100%;
-            text-center;
+            text-align: center;
             animation: fadeIn 0.7s ease-in;
         }
 
@@ -293,7 +303,7 @@
         </div>
 
         <div class="image-container">
-            <img src="assets/generated/valentine-good-choice-meme.dim_1200x1200.png" alt="Good choice ❤️">
+            <img src="assets/generated/dog-valentine-meme.dim_1200x1200.png" alt="Good choice ❤️">
         </div>
 
         <p class="success-message">I knew you'd make the right choice! 💕</p>
