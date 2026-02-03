@@ -232,6 +232,33 @@
             display: block;
         }
 
+        .image-fallback {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .image-fallback p {
+            font-size: 1.125rem;
+            color: var(--muted-foreground);
+            margin-bottom: 1.5rem;
+        }
+
+        .image-fallback a {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: var(--primary-foreground);
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .image-fallback a:hover {
+            filter: brightness(0.9);
+            transform: scale(1.05);
+        }
+
         .success-message {
             font-size: 1.25rem;
             color: var(--muted-foreground);
@@ -303,7 +330,17 @@
         </div>
 
         <div class="image-container">
-            <img src="assets/generated/dog-valentine-meme.dim_1200x1200.png" alt="Good choice ❤️">
+            <img 
+                id="celebrationImage"
+                src="assets/generated/dog-valentine-meme.dim_1200x1200.png" 
+                alt="Good choice ❤️"
+            >
+            <div id="imageFallback" class="image-fallback hidden">
+                <p>The celebration image couldn't load, but you can view it here:</p>
+                <a href="assets/generated/dog-valentine-meme.dim_1200x1200.png" target="_blank" rel="noopener noreferrer">
+                    View Celebration Image
+                </a>
+            </div>
         </div>
 
         <p class="success-message">I knew you'd make the right choice! 💕</p>
@@ -323,8 +360,16 @@
         const yesBtn = document.getElementById('yesBtn');
         const noBtn = document.getElementById('noBtn');
         const buttonContainer = document.getElementById('buttonContainer');
+        const celebrationImage = document.getElementById('celebrationImage');
+        const imageFallback = document.getElementById('imageFallback');
 
         let noButtonPosition = { x: 0, y: 0 };
+
+        // Handle image load error
+        celebrationImage.addEventListener('error', function() {
+            celebrationImage.classList.add('hidden');
+            imageFallback.classList.remove('hidden');
+        });
 
         // Initialize No button position
         function initializeNoButton() {
@@ -374,3 +419,4 @@
     </script>
 </body>
 </html>
+
